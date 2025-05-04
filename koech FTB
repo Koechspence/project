@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Football Scoreboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .scoreboard { background: #f3f3f3; padding: 20px; border-radius: 10px; display: inline-block; }
+        .team { font-size: 20px; font-weight: bold; }
+        .score { font-size: 40px; margin: 10px 0; }
+        button { padding: 10px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Live Football Scoreboard</h1>
+    <div class="scoreboard">
+        <p class="team">Liverpool ⚽</p>
+        <p class="score" id="liverpoolScore">0</p>
+        <button onclick="updateScore('liverpool')">+1 Goal</button>
+        <hr>
+        <p class="team">Opponent 🏆</p>
+        <p class="score" id="opponentScore">0</p>
+        <button onclick="updateScore('opponent')">+1 Goal</button>
+    </div>
+
+    <script>
+        function updateScore(team) {
+            let scoreElement = document.getElementById(team + "Score");
+            let score = parseInt(scoreElement.innerText);
+            scoreElement.innerText = score + 1;
+        }
+    </script>
+</body>
+</html>
